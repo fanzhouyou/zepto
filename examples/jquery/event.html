@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("input").focus(function () {
+                $("input").css("background-color", "#FFFFCC");
+            });
+            $("input").blur(function () {
+                $("input").css("background-color", "#D6D6FF");
+            });
+
+
+            $("p#test").mouseenter(function () {
+                $("p#test").css("background-color", "yellow");
+            });
+            $("p#test").mouseleave(function () {
+                $("p#test").css("background-color", "#E9E9E4");
+            });
+        })
+
+
+    </script>
+</head>
+<body>
+Enter your name: <input type="text"/>
+<p>请在上面的输入域中点击，使其获得焦点，然后在输入域外面点击，使其失去焦点。</p>
+
+<p id="test" style="background-color:#E9E9E4">鼠标测试</p>
+</body>
+</html>

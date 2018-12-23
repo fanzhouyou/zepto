@@ -9,7 +9,14 @@
     display: none;
     color: red;
   }
+
+  .button {
+    display: none;
+    color: red;
+  }
+  #red {color:red;}
 </style>
+
 
 <ul id=items>
   <li>List item 1 <span class=delete>DELETE</span></li>
@@ -17,6 +24,10 @@
   <li>List item 3 <span class=delete>DELETE</span></li>
   <li>List item 4 <span class=delete>DELETE</span></li>
 </ul>
+
+  <p id="red">This is a header</span></p>
+
+<button style="background: #0bb20c">Click Me!</button>
 
 <script>
 $('#items li').swipe(function(){
@@ -27,4 +38,16 @@ $('#items li').swipe(function(){
 $('.delete').tap(function(){
   $(this).parent('li').remove()
 })
+
+$('button').tap(function () {
+    $(this).text("Test")
+})
+
+$('button').longTap(function () {
+    $(this).text("Test1")
+})
+  
+  Zepto(function ($) {
+
+  })
 </script>
