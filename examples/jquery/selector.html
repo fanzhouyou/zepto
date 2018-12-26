@@ -6,7 +6,13 @@
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".no2").css("background-color", "#B2E0FF");//class
+
+            $('h2').click(function () {
+                $(this).hide()//this
+            })
+            $(".no2").click(function () {
+                $(".no2").css("background-color", "#B2E0FF");//class
+            })
 
             $("#p1").click(function () {//id
                 $("#p1").append("Some appended text.")
@@ -14,8 +20,8 @@
 
             $("div").click(function () {
                 // $(this).hide()//this
-                // $("div#test").hide()
-                $("div.no2").hide()
+                $("div#test").hide()
+                // $("div.no2").hide()
             })
         });
 
@@ -35,10 +41,10 @@
 </head>
 <body>
 <h2>This is a heading</h2>
-<p>This is a paragraph.</p>
-<div id="test">This is another paragraph.</div>
+<p>This is a paragraph----->1.</p>
+<div id="test">This is a paragraph----->2.</div>
 <button type="button" id="button">Click me</button>
 <div class="no2">qwerty</div>
-<p id="p1">This is a paragraph.</p>
+<p id="p1">This is a paragraph----->3.</p>
 </body>
 </html>

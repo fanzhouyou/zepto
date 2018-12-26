@@ -21,6 +21,10 @@
             $("p#test").mouseleave(function () {
                 $("p#test").css("background-color", "#E9E9E4");
             });
+
+            $("button").click(function(){
+                $("input").trigger("select");
+            });
         })
 
 
@@ -28,8 +32,8 @@
 </head>
 <body>
 Enter your name: <input type="text"/>
-<p>请在上面的输入域中点击，使其获得焦点，然后在输入域外面点击，使其失去焦点。</p>
 
 <p id="test" style="background-color:#E9E9E4">鼠标测试</p>
+<button> click </button>
 </body>
 </html>

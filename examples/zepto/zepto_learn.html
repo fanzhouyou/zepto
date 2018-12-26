@@ -6,12 +6,86 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
 <body>
-<img src="../pic/back_default.png" alt="back" style="position:absolute; " id="back">
-<img src="../pic/menu_default.png" alt="menu" style="position:absolute; " id="menu">
+<!--<img src="../pic/back_default.png"  align="left";  id="back1">-->
+<!--<img src="../pic/menu_default.png"  align="middle"; id="menu1">-->
+<!--<div>-->
+    <!--<img src="../pic/left_default.png" >-->
+    <!--<img src="../pic/right_default.png" >-->
+    <!--<img src="../pic/up_default.png" >-->
+    <!--<img src="../pic/down_default.png" >-->
+<!--</div>-->
+<button id="button1" style="width: 100px;height: 50px"></button>
+
+<div id="pic1">
+    <img src="../pic/back_default.png" alt="back" align="bottom" id="back">
+    <img src="../pic/menu_default.png" alt="menu" align="bottom" id="menu">
+</div>
+<div id="pic2">
+    <!--<img src="../pic/up_default.png" alt="上" style="position:absolute; z-index:1;  margin-left: 200px " id="up">-->
+    <!--<img src="../pic/left_default.png" alt="左" style="position:absolute; z-index:2; margin-left: 200px" id="left" >-->
+    <!--<img src="../pic/right_default.png" alt="右" style="position:absolute; z-index:3; margin-left: 200px" id="right">-->
+    <!--<img src="../pic/down_default.png" alt="下" style="position:absolute; z-index:4; margin-left: 200px" id="down">-->
+    <img src="../pic/ok_default.png" alt="ok" style="position:absolute; z-index:5; margin-left: 200px" id="ok">
+</div>
+<div id="pic3">
+    <img src="../pic/left_default.png" alt="左" style="position:absolute;" id="left" >
+</div>
+
+
 
 </body>
 
-<script src="../../src/zepto.js"></script>
-<script src="../../src/event.js"></script>
-<script src="../../src/fx.js"></script>
+<script src="../../dist/zepto.js"></script>
+<script type="text/javascript">
+
+
+    Zepto(function(){
+        // alert('Ready to Zepto!')
+        document.addEventListener('touchmove',function(event) {
+            // 判断默认行为是否可以被禁用
+            if (event.cancelable) {
+                // 判断默认行为是否已经被禁用
+                if (!event.defaultPrevented) {
+                    event.preventDefault();
+                }
+            }
+        }, false)
+
+        $('#back').tap(function () {
+            $(this).hide()
+        })
+        $('#menu').swipe(function () {
+            $(this).after('<p>doubleTap</p>')
+        })
+
+        $('#ok').doubleTap(function () {
+            $(this).hide();
+            console.log("test")
+        })
+
+        $('#left').on({
+            touchstart: function (evt) {
+                touchFunc(evt, "down");
+            },
+            touchend: function (evt) {
+                touchFunc(evt, "up");
+            }
+        })
+
+        $('#button1').on('click', fun1);
+
+        $('#button1').off('click', fun1);
+    })
+
+    let fun1 = function (e, name) {
+        console.log(e, name)
+    }
+
+    function touchFunc(evt, action) {
+        console.log(evt,action)
+    }
+
+
+</script>
+
 </html>
