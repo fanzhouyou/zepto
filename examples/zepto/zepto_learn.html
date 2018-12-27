@@ -41,15 +41,15 @@
 
     Zepto(function(){
         // alert('Ready to Zepto!')
-        document.addEventListener('touchmove',function(event) {
-            // 判断默认行为是否可以被禁用
-            if (event.cancelable) {
-                // 判断默认行为是否已经被禁用
-                if (!event.defaultPrevented) {
-                    event.preventDefault();
-                }
-            }
-        }, false)
+        // document.addEventListener('touchmove',function(event) {
+        //     // 判断默认行为是否可以被禁用
+        //     if (event.cancelable) {
+        //         // 判断默认行为是否已经被禁用
+        //         if (!event.defaultPrevented) {
+        //             event.preventDefault();
+        //         }
+        //     }
+        // }, false)
 
         $('#back').tap(function () {
             $(this).hide()
@@ -74,7 +74,7 @@
 
         $('#button1').on('click', fun1);
 
-        $('#button1').off('click', fun1);
+        // $('#button1').off('click', fun1);
     })
 
     let fun1 = function (e, name) {
